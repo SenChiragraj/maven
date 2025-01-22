@@ -1,0 +1,15 @@
+<div *ngIf="users.length>0">
+
+<table>
+    <tr>
+        <th> Name</th>
+        <th> Registration Date</th>
+        <th> Account Balance</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.name }}</td>
+        <td>{{user.registrationDate | dateFormat: 'MMMM dd, yyyy'}}</td>
+        <td>{{ user.balance | currencyFormat:'$'}}</td>
+    </tr>
+</table>
+</div>
