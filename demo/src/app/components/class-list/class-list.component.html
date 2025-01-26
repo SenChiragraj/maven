@@ -1,0 +1,29 @@
+<div class="m-2">
+    <div class="p-2" *ngIf=" classes.length > 0 else noClasses">
+        <div class="">
+            <table class="table">
+                <tr>
+                    <th> ID </th>
+                    <th> Name </th>
+                    <th> Instructor </th>
+                    <th> Time </th>
+                    <th> Available Slots</th>
+                    <th> Actions </th>
+                </tr>
+                <tr scope="row" *ngFor="let class of classes">
+                    <td> {{ class.id }} </td>
+                    <td> {{ class.name }} </td>
+                    <td> {{ class.instructor }} </td>
+                    <td> {{ class.time }} </td>
+                    <td> {{ class.availableSlots }} </td>  
+                    <button type="button" routerLink="/edit-class" class="btn btn-warning mx-2 btn-sm" (click)="onEdit(class.id)">Edit</button>
+                    <button type="button" class="btn btn-danger my-2 btn-sm" (click)="onDelete(class.id)">Delete</button>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <ng-template #noClasses>
+        <p>No Classes yet. <span routerLink="/add-class" style="color: blue; cursor: pointer;">Add new</span></p>
+    </ng-template>
+</div>

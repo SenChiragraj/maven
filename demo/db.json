@@ -1,13 +1,81 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title", "views": 100 },
-      { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "classes": [
+    {
+      "id": "1",
+      "name": "Yoga",
+      "description": "Yoga is a group of physical, mental, and spiritual practices or disciplines which originated in ancient India.",
+      "instructor": "John Doe",
+      "date": "2021-01-01",
+      "time": "10:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
+    },
+    {
+      "id": "2",
+      "name": "Pilates",
+      "description": "Pilates is a physical fitness system developed in the early 20th century by Joseph Pilates, after whom it was named.",
+      "instructor": "Jane Doe",
+      "date": "2021-01-02",
+      "time": "11:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
+    },
+    {
+      "id": "3",
+      "name": "Zumba",
+      "description": "Zumba is a Colombian fitness program created by Pietro Pérez in the 1990s, and is based on Latin dance and aerobics.",
+      "instructor": "John Doe",
+      "date": "2021-01-03",
+      "time": "12:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
+    },
+    {
+      "id": "4",
+      "name": "Spinning",
+      "description": "Spinning is a form of indoor cycling, in which participants cycle to music in a group.",
+      "instructor": "Jane Doe",
+      "date": "2021-01-04",
+      "time": "13:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
+    },
+    {
+      "id": "5",
+      "name": "Yoga",
+      "description": "Yoga is a group of physical, mental, and spiritual practices or disciplines which originated in ancient India.",
+      "instructor": "John Doe",
+      "date": "2021-01-05",
+      "time": "14:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
+    },
+    {
+      "id": "6",
+      "name": "Pilates",
+      "description": "Pilates is a physical fitness system developed in the early 20th century by Joseph Pilates, after whom it was named.",
+      "instructor": "Jane Doe",
+      "date": "2021-01-06",
+      "time": "15:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
+    },
+    {
+      "id": "7",
+      "name": "Zumba",
+      "description": "Zumba is a Colombian fitness program created by Pietro Pérez in the 1990s, and is based on Latin dance and aerobics.",
+      "instructor": "John Doe",
+      "date": "2021-01-07",
+      "time": "16:00",
+      "duration": "1 hour",
+      "capacity": 10,
+      "availableSlots": 10
     }
-  }
+  ]
+}

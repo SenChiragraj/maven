@@ -5,15 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddClassComponent } from './components/add-class/add-class.component';
+import { ClassListComponent } from './components/class-list/class-list.component';
+import { EditClassListComponent } from './components/edit-class-list/edit-class-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddClassComponent,
+    ClassListComponent,
+    EditClassListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

@@ -1,0 +1,125 @@
+<div class="container">
+    <h1>Add new Class</h1>
+    <form action="" class="form" [formGroup]="addForm" (submit)="onAddClass()">
+      <!-- name -->
+      <div class="form-group">
+        <label for="name" id="name" class="form-label"> Name:</label>
+        <input class="form-input" type="text" name="Name" id="name" formControlName="name">
+        <div *ngIf="addForm.get('name')?.touched">
+            <div class="text-red" *ngIf="addForm.get('name')?.errors?.['required']">
+              Name is required.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('name')?.errors?.['minlength']">
+              Name must be at least 3 characters long.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('name')?.errors?.['maxlength']">
+              Name can be max 100 characters long.
+            </div>
+          </div>
+      </div>
+      <!-- description -->
+      <div class="form-group">
+        <label for="description" id="description" class="form-label"> Description:</label>
+        <input class="form-input" type="text" name="description" id="description" formControlName="description">
+        <div *ngIf="addForm.get('description')?.touched">
+            <div class="text-red" *ngIf="addForm.get('description')?.errors?.['required']">
+              Description is required.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('description')?.errors?.['minlength']">
+              Description must be at least 3 characters long.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('description')?.errors?.['maxlength']">
+              Description can be 500 characters long.
+            </div>
+          </div>
+      </div>
+      <!-- instructor -->
+      <div class="form-group">
+        <label for="instructor" id="instructor" class="form-label"> Instructor:</label>
+        <input class="form-input" type="text" name="instructor" id="instructor" formControlName="instructor">
+        <div *ngIf="addForm.get('instructor')?.touched">
+            <div class="text-red" *ngIf="addForm.get('instructor')?.errors?.['required']">
+              Instructor is required.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('instructor')?.errors?.['minlength']">
+              Instructor must be at least 3 characters long.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('instructor')?.errors?.['maxlength']">
+              Instructor can be 50 characters long.
+            </div>
+          </div>
+      </div>
+      <!-- date -->
+      <div class="form-group">
+        <label for="date" id="date" class="form-label"> Date:</label>
+        <input class="form-input" type="text" name="date" id="date" formControlName="date">
+        <div *ngIf="addForm.get('date')?.touched">
+            <div class="text-red" *ngIf="addForm.get('date')?.errors?.['required']">
+              Date is required.
+            </div>
+          </div>
+      </div>
+      <!-- time -->
+      <div class="form-group">
+        <label for="time" id="time" class="form-label"> Time:</label>
+        <input class="form-input" type="text" name="time" id="time" formControlName="time">
+        <div *ngIf="addForm.get('time')?.touched">
+            <div class="text-red" *ngIf="addForm.get('time')?.errors?.['required']">
+              Time is required.
+            </div>
+          </div>
+      </div>
+      <!-- duration -->
+      <div class="form-group">
+        <label for="duration" id="duration" class="form-label"> Duration:</label>
+        <input class="form-input" type="text" name="duration" id="duration" formControlName="duration">
+        <div *ngIf="addForm.get('duration')?.touched">
+            <div class="text-red" *ngIf="addForm.get('duration')?.errors?.['required']">
+              Duration is required.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('duration')?.errors?.['min']">
+              Duration must be at least 15 characters long.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('duration')?.errors?.['max']">
+              Duration can be max 180 characters long.
+            </div>
+          </div>
+      </div>
+      <!-- capacity -->
+      <div class="form-group">
+        <label for="capacity" id="capacity" class="form-label"> Capacity:</label>
+        <input class="form-input" type="text" name="capacity" id="capacity" formControlName="capacity">
+        <div *ngIf="addForm.get('capacity')?.touched">
+            <div class="text-red" *ngIf="addForm.get('capacity')?.errors?.['required']">
+              Capacity is required.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('capacity')?.errors?.['min']">
+              Capacity must be at least 15 characters long.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('capacity')?.errors?.['max']">
+              Capacity can be max 180 characters long.
+            </div>
+          </div>
+      </div>
+      <!-- availableSlots -->
+      <div class="form-group">
+        <label for="availableSlots" id="availableSlots" class="form-label"> Available Slots:</label>
+        <input class="form-input" type="text" name="availableSlots" id="availableSlots" formControlName="availableSlots">
+        <div *ngIf="addForm.get('availableSlots')?.touched">
+            <div class="text-red" *ngIf="addForm.get('availableSlots')?.errors?.['required']">
+              Available Slots is required.
+            </div>
+            <div class="text-red" *ngIf="addForm.get('availableSlots')?.errors?.['min']">
+              Available Slots must be at least .
+            </div>
+            <div class="text-red" *ngIf="addForm.get('availableSlots')?.errors?.['max']">
+              Available Slots can be max 100.
+            </div>
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" > Add new Class</button>
+
+
+    </form>
+</div>
