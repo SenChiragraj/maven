@@ -1,1 +1,99 @@
-<p>edit-class-list works!</p>
+<div class="">
+  <h3>Edit Class Component</h3>
+  <form action="" #editForm = "ngForm" (ngSubmit) = "onSubmit(editForm)">
+    <!-- name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-input" id="name" name="name" ngModel required minlength="3" maxlength="100">
+      <div class="" *ngIf="editForm.controls['name']?.touched">
+        <div class="text-red" *ngIf="editForm.controls['name']?.errors?.['required']">Name is required.</div>
+        <div class="text-red" *ngIf="editForm.controls['name']?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+        <div class="text-red" *ngIf="editForm.controls['name']?.errors?.['maxlength']">Name can be max 100 characters long.</div>
+      </div>
+    </div>
+    <!-- description -->
+    <div class="form-group">
+      <label for="description" id="description" class="form-label"> Description:</label>
+      <input class="form-input" type="text" name="description" id="description" ngModel required minlength="10" maxlength="500">
+      <div *ngIf="editForm.controls['description']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['description']?.errors?.['required']">
+            Description is required.
+          </div>
+          <div class="text-red" *ngIf="editForm.controls['description']?.errors?.['minlength']">
+            Description must be at least 10 characters long.
+          </div>
+          <div class="text-red" *ngIf="editForm.controls['description']?.errors?.['maxlength']">
+            Description can be 500 characters long.
+          </div>
+        </div>
+    </div>
+    <!-- instructor -->
+    <div class="form-group">
+      <label for="instructor" id="instructor" class="form-label"> Instructor:</label>
+      <input class="form-input" type="text" name="instructor" id="instructor" ngModel required minlength="3" maxlength="50">
+      <div *ngIf="editForm.controls['instructor']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['instructor']?.errors?.['required']">
+            Instructor is required.
+          </div>
+          <div class="text-red" *ngIf="editForm.controls['instructor']?.errors?.['minlength']">
+            Instructor must be at least 3 characters long.
+          </div>
+          <div class="text-red" *ngIf="editForm.controls['instructor']?.errors?.['maxlength']">
+            Instructor can be 50 characters long.
+          </div>
+        </div>
+    </div>
+    <!-- date -->
+    <div class="form-group">
+      <label for="date" id="date" class="form-label"> Date:</label>
+      <input class="form-input" type="text" name="date" id="date" ngModel required>
+      <div *ngIf="editForm.controls['date']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['date']?.errors?.['required']">
+            Date is required.
+          </div>
+        </div>
+    </div>
+    <!-- time -->
+    <div class="form-group">
+      <label for="time" id="time" class="form-label"> Time:</label>
+      <input class="form-input" type="text" name="time" id="time" ngModel required>
+      <div *ngIf="editForm.controls['time']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['time']?.errors?.['required']">
+            Time is required.
+          </div>
+        </div>
+    </div>
+    <!-- duration -->
+    <div class="form-group">
+      <label for="duration" id="duration" class="form-label"> Duration:</label>
+      <input class="form-input" type="text" name="duration" id="duration" ngModel required>
+      <div *ngIf="editForm.controls['duration']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['duration']?.errors?.['required']">
+            Duration is required.
+          </div>
+        </div>
+    </div>
+    <!-- capacity -->
+    <div class="form-group">
+      <label for="capacity" id="capacity" class="form-label"> Capacity:</label>
+      <input class="form-input" type="text" name="capacity" id="capacity" ngModel required>
+      <div *ngIf="editForm.controls['capacity']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['capacity']?.errors?.['required']">
+            Capacity is required.
+          </div>
+        </div>
+    </div>
+    <!-- availableSlots -->
+    <div class="form-group">
+      <label for="availableSlots" id="availableSlots" class="form-label"> Available Slots:</label>
+      <input class="form-input" type="text" name="availableSlots" id="availableSlots" ngModel required>
+      <div *ngIf="editForm.controls['availableSlots']?.touched">
+          <div class="text-red" *ngIf="editForm.controls['availableSlots']?.errors?.['required']">
+            Available Slots is required.
+          </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

@@ -20,15 +20,15 @@ export class FitnessService {
     return this.http.post<FitnessClass>(`${this.apiUrl}`, fitnessClass);
   }
 
-  updateClass(fitnessClass : FitnessClass) : Observable<FitnessClass> {
-    return this.http.put<FitnessClass>(`${this.apiUrl}/${fitnessClass.id}`, fitnessClass);
+  updateClass(id : string, fitnessClass : FitnessClass) : Observable<FitnessClass> {
+    return this.http.put<FitnessClass>(`${this.apiUrl}/${id}`, fitnessClass);
   }
 
   deleteClass(id : string) : Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  getClassById(id :number) : Observable<FitnessClass> {
+  getClassById(id :string) : Observable<FitnessClass> {
     return this.http.get<FitnessClass>(`${this.apiUrl}/${id}`);
   }
 }

@@ -1,4 +1,10 @@
-import { Component, OnChanges, OnInit, SimpleChanges, Input } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  Input
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { FitnessClass } from 'src/app/models/fitness-class';
 import { FitnessService } from 'src/app/services/fitness.service';
@@ -12,43 +18,47 @@ export class ClassListComponent implements OnInit {
   classes: FitnessClass[] = [];
   errorMessage: string = '';
 
-  constructor(private service: FitnessService, private router : Router) {}
+  constructor(private service: FitnessService, private router: Router) {}
 
   ngOnInit(): void {
-      console.log('Fetching classes');
+    this.loadClasses();
+  }
+
+  loadClasses(): void {
+    console.log('Fetching classes');
     this.service.getClasses().subscribe({
       next: (data: FitnessClass[]) => {
         console.log(data);
         this.classes = data;
       },
-      error: () => {
-        this.errorMessage = 'Error fetching classes';
+      error: (error) => {
+        console.log(error);
+        this.errorMessage = 'Error fetching classes: ' + error;
       }
     });
   }
 
-  onDelete(id : string = '') {
-    if(id === '') {
+  onDelete(id: string = ''): void {
+    if (id === '') {
       this.errorMessage = 'Id was not given!';
       return;
     }
     this.service.deleteClass(id).subscribe({
-      next : (data) => {
-        this.router.navigate(['']);
+      next: (data) => {
+        console.log(data);
+        this.loadClasses();
       },
-      error : () => {
-        this.errorMessage = 'Form Error in deleting try again!';
+      error: (error) => {
+        this.errorMessage = 'Error deleting class: ' + error;
       }
     });
   }
 
-  onEdit(id : string = '') {
-    if(id === '') {
+  onEdit(id: string = ''): void {
+    if (id === '') {
       this.errorMessage = 'Id was not given!';
       return;
     }
     this.router.navigate([`/edit-class/${id}`]);
   }
-
 }
-
